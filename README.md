@@ -32,8 +32,8 @@ all the options documented in the Tenon API documentation (with one exception, s
 In addition, it can also contain the
 following properties:
 
-- config -- Path to a JSON file with parameters to merge in. Default for this in both
-index.js and the Grunt task is '.tenonrc' in the current working directory. This file would be
+- config -- Path to a JSON file with parameters to merge in.
+This file would be
 a convenient place to put the API URL and the API key.
 - userid and password -- if both are present and the url starts with http, then these
 are incorporated into the url passed to Tenon for basic auth: (use<span>rid:</span>password@domain.com/...)
