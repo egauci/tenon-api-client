@@ -21,7 +21,7 @@ The lib folder contains node modules.
 To Use
 ------
 
-var tenon = require('tenon-api');
+var tenon = require('tenon-api-client');
 
 tenon(request, function(err, response) {});
 
