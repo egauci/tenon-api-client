@@ -5,6 +5,10 @@ This is an interface to [TENON](http://tenon.io/) - a web accessiblity testing A
 
 Tenon docs: https://bitbucket.org/tenon-io/tenon.io-documentation/
 
+This API client module is open and free. However, access to the Tenon API must
+be granted by [Tenon](http://tenon.io/). You will need to obtain an API key to
+use it.
+
 What's Here
 -----------
 
