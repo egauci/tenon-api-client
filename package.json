@@ -1,7 +1,7 @@
 {
-  "name": "tenon-api",
+  "name": "tenon-api-client",
   "version": "0.1.0",
-  "description": "Tenon Accessibility Testing API Module",
+  "description": "Tenon Accessibility Testing API Client Module",
   "main": "main.js",
   "dependencies": {
     "bluebird": "^2.3.2",
@@ -12,10 +12,19 @@
   "license": "isc",
   "repository": {
     "type": "git",
-    "url": "https://github.com/egauci/tenon-api.git"
+    "url": "https://github.com/egauci/tenon-api-client.git"
   },
   "author": {
     "name": "Ed Gauci",
     "email": "ed@gauci.co"
+  },
+  "keywords": [
+    "tenon", "accessibility", "testing", "a11y"
+  ],
+  "bugs": {
+    "url": "https://github.com/egauci/tenon-api-client/issues"
+  },
+  "scripts": {
+    "test": "node tests/index.js"
   }
 }
