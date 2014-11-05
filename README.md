@@ -128,3 +128,9 @@ Used In
 
 This module is used in [Tenon Grunt Plugin](https://github.com/egauci/grunt-tenon-client) and
 [Tenon Gulp Plugin](https://github.com/egauci/gulp-tenon-client).
+
+Changelog
+---------
+
+- 0.1.2 - Made inlining function optional and user replacable.
+
