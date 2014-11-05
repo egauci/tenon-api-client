@@ -37,6 +37,7 @@ This object can contain properties corresponding to all the request parameters d
 in the [Tenon API documentation](http://tenon.io/documentation/) (except for *src*, see below).
 In addition, it can also contain the following properties:
 
+- url -- either a web URL (http or https) or a path to a local html file. This property is required.
 - config -- Path to a JSON file with parameters to merge in.
 This file would be
 a convenient place to put the API key.
@@ -45,12 +46,21 @@ are incorporated into the url passed to the Tenon API for basic auth: (userid:pa
 - filter -- an array of tIDs to filter out of the results. Actually it leaves resultSet unmolested, but creates a
 new array, resultSetFiltered, with these particular errors filtered out. Default is the empty array: [].
 - cssUrlReplacer -- a function which receives a CSS URL as its parameter and returns a replacement.
-See below for more on this.
+See below for more on this. This applies only if *url* is a path to a local html file.
+- inline -- if present should be a *function* or *false.* If false then it
+suppresses inlining of local Javascript and CSS. If a function, it will
+be used for inlining in place of the companion inliner.js module. The
+function must accept a config object with one property -- fname, containing
+a string path to the HTML file. It must return a promise and fulfill that
+promise with a string that we will send to the Tenon API as the *src*
+parameter. Any other value (including null and undefined) will cause normal inlining with the
+companion inliner module. This property applies only if *url* is a path to a local html file.
 
 The only Tenon API parameter that cannot be passed is *src*. The module requires the *url* property
 and will populate src if *url* points to a local file.
 
-IMPORTANT: If the given url is a local file (it doesn't start with "http")
+IMPORTANT: If the given url is a local file (it doesn't start with "http") and
+the *inline* property in the configuration is not false or a function,
 this module will inline all local Javascript and CSS. For example:
 
     <link rel="stylesheet" href="css/combo.css" media="screen">

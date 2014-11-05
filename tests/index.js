@@ -5,7 +5,8 @@ var tenon = require('../main');   // Normally this is 'tenon-api-client' if inst
 tenon({
   url: 'tests/index.html',        // file path to html, required
   key: 'Your Tenon API key',      // API key, required
-  level: 'AAA',                   // Tenon option to filter by WCAG level
+  level: 'AAA',                   // Tenon option to filter by WCAG level,
+  config: 'tests/.tenonrc',       // default values in this JSON file
   filter: [31, 54]                // in response, filter these tIDs out of resultSetFiltered
 }, function(err, results) {
   if (err) {
