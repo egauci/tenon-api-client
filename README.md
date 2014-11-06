@@ -45,8 +45,6 @@ a convenient place to put the API key.
 are incorporated into the url passed to the Tenon API for basic auth: (userid:password&#x00040;domain.com/...)
 - filter -- an array of tIDs to filter out of the results. Actually it leaves resultSet unmolested, but creates a
 new array, resultSetFiltered, with these particular errors filtered out. Default is the empty array: [].
-- cssUrlReplacer -- a function which receives a CSS URL as its parameter and returns a replacement.
-See below for more on this. This applies only if *url* is a path to a local html file.
 - inline -- if present should be a *function* or *false.* If false then it
 suppresses inlining of local Javascript and CSS. If a function, it will
 be used for inlining in place of the companion inliner.js module. The
@@ -70,21 +68,6 @@ will be converted to:
     <style media="screen">
       [[content of css/combo.css]]
     </style>
-
-CSS files may have URLs  within, such as:
-
-    background: url(../images/foo.png) no-repeat;
-    background: url("../../images/bar.png");
-
-Inlining would likely make these URLs incorrect. The cssUrlReplacer configuration property is a function
-that receives the url portion (in the first example above, it would receive *"../images/foo.png"*). It
-returns text to replace it. This configuration property is optional. It defaults to this:
-
-    function(url) {
-      return url.replace(/^(\.\.\/)*/, '');
-    }
-
-This default CSS URL replacer removes any number of "../" substrings from the beginning of the URL.
 
 The inlined files must be relative to the HTML file. For example, if a javascript src attribute
 in an html file at C:\project\index.html is "js/script.js" then the file should be at
@@ -132,5 +115,6 @@ This module is used in [Tenon Grunt Plugin](https://github.com/egauci/grunt-teno
 Changelog
 ---------
 
+- 0.1.3 - Removed functionality for modifying url parameters in CSS local files. It was not useful.
 - 0.1.2 - Made inlining function optional and user replacable.
 
