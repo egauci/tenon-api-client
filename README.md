@@ -38,6 +38,7 @@ in the [Tenon API documentation](http://tenon.io/documentation/) (except for *sr
 In addition, it can also contain the following properties:
 
 - url -- either a web URL (http or https) or a path to a local html file. This property is required.
+- urlPrefix -- This gets prepended to url. Convenient for converting file paths to http urls. Default is no urlPrefix.
 - config -- Path to a JSON file with parameters to merge in.
 This file would be
 a convenient place to put the API key.
@@ -115,6 +116,7 @@ This module is used in [Tenon Grunt Plugin](https://github.com/egauci/grunt-teno
 Changelog
 ---------
 
+- 0.1.4 - Documented urlPrefix - no code changes.
 - 0.1.3 - Removed functionality for modifying url parameters in CSS local files. It was not useful.
 - 0.1.2 - Made inlining function optional and user replacable.
 
