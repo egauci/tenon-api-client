@@ -1,6 +1,6 @@
 {
   "name": "tenon-api-client",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Tenon Accessibility Testing API Client Module",
   "main": "main.js",
   "dependencies": {
