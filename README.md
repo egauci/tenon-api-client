@@ -115,8 +115,8 @@ This module is used in [Tenon Grunt Plugin](https://github.com/egauci/grunt-teno
 
 Changelog
 ---------
-
+- 0.1.7 - Minor internal change to help grunt-tenon-client.
+- 0.1.5 & 0.1.6 - new tenon URL (https vs http)
 - 0.1.4 - Documented urlPrefix - no code changes.
 - 0.1.3 - Removed functionality for modifying url parameters in CSS local files. It was not useful.
 - 0.1.2 - Made inlining function optional and user replacable.
-
